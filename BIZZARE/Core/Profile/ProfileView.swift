@@ -12,7 +12,7 @@ struct ProfileView: View {
                         Text("배송지 관리")
                     }
                     NavigationLink("위시리스트") {
-                        Text("위시리스트")
+                        WishlistView()
                     }
                 }
                 

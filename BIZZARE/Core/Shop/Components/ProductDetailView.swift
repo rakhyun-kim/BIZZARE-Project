@@ -6,6 +6,7 @@ struct ProductDetailView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showingAddToCartAlert = false
     @State private var showingCart = false
+    @State private var showingWishlistAlert = false
     
     var body: some View {
         ScrollView {
@@ -29,6 +30,16 @@ struct ProductDetailView: View {
                             
                             Spacer()
                             
+                            // 위시리스트 버튼
+                            Button(action: {
+                                toggleWishlist()
+                            }) {
+                                Image(systemName: viewModel.isInWishlist(product: product) ? "heart.fill" : "heart")
+                                    .foregroundColor(viewModel.isInWishlist(product: product) ? .red : .black)
+                                    .padding(8)
+                            }
+                            
+                            // 장바구니 버튼
                             Button(action: {
                                 addToCart()
                             }) {
@@ -84,6 +95,13 @@ struct ProductDetailView: View {
         .sheet(isPresented: $showingCart) {
             CartView()
         }
+        .alert("위시리스트", isPresented: $showingWishlistAlert) {
+            Button("확인", role: .cancel) { }
+        } message: {
+            Text(viewModel.isInWishlist(product: product) ? 
+                 "\(product.name)이(가) 위시리스트에 추가되었습니다." :
+                 "\(product.name)이(가) 위시리스트에서 제거되었습니다.")
+        }
     }
     
     private func addToCart() {
@@ -91,5 +109,14 @@ struct ProductDetailView: View {
             viewModel.addToCart(product: product)
         }
         showingAddToCartAlert = true
+    }
+    
+    private func toggleWishlist() {
+        if viewModel.isInWishlist(product: product) {
+            viewModel.removeFromWishlist(product: product)
+        } else {
+            viewModel.addToWishlist(product: product)
+        }
+        showingWishlistAlert = true
     }
 }

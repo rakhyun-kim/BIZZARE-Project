@@ -36,6 +36,7 @@ class ShopViewModel: ObservableObject {
         )
     ]
     @Published var cartItems: [Product] = []
+    @Published var wishlistItems: [Product] = []
     @Published var searchResults: [Product] = []
     @Published var filteredProducts: [Product] = []
     
@@ -77,5 +78,19 @@ class ShopViewModel: ObservableObject {
     // 장바구니에 있는지 확인하는 함수 추가
     func isInCart(product: Product) -> Bool {
         return cartItems.contains(where: { $0.id == product.id })
+    }
+    
+    func addToWishlist(product: Product) {
+        if !wishlistItems.contains(where: { $0.id == product.id }) {
+            wishlistItems.append(product)
+        }
+    }
+    
+    func removeFromWishlist(product: Product) {
+        wishlistItems.removeAll { $0.id == product.id }
+    }
+    
+    func isInWishlist(product: Product) -> Bool {
+        return wishlistItems.contains(where: { $0.id == product.id })
     }
 } 

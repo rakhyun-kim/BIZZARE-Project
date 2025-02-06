@@ -20,7 +20,7 @@ struct ShopView: View {
                                 viewModel.filterProducts(by: category)
                             }) {
                                 Text(category)
-                                    .foregroundColor(selectedCategory == category ? .black : .gray)
+                                    .foregroundColor(selectedCategory == category ? .black : .black.opacity(0.5))
                                     .fontWeight(selectedCategory == category ? .bold : .regular)
                             }
                         }

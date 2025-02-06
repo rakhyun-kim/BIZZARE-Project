@@ -19,10 +19,10 @@ struct CartView: View {
                     VStack(spacing: 20) {
                         Image(systemName: "cart")
                             .font(.system(size: 50))
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
                         Text("장바구니가 비어있습니다")
                             .font(.headline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
                     }
                     .frame(maxHeight: .infinity)
                 } else {

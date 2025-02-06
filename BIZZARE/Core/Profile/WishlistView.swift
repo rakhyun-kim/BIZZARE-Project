@@ -9,10 +9,10 @@ struct WishlistView: View {
                 VStack(spacing: 20) {
                     Image(systemName: "heart")
                         .font(.system(size: 50))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                     Text("위시리스트가 비어있습니다")
                         .font(.headline)
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                 }
                 .navigationTitle("위시리스트")
             } else {

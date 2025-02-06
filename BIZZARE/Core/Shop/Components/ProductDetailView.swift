@@ -63,18 +63,20 @@ struct ProductDetailView: View {
                     HStack {
                         Text("재고")
                             .font(.subheadline)
+                            .foregroundColor(.black)
                         Text("\(product.quantity)개")
                             .font(.subheadline)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
                     }
                     
                     // 상품 설명
                     VStack(alignment: .leading, spacing: 8) {
                         Text("상품 설명")
                             .font(.headline)
+                            .foregroundColor(.black)
                         Text(product.description)
                             .font(.body)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.black)
                     }
                     .padding(.top, 8)
                 }

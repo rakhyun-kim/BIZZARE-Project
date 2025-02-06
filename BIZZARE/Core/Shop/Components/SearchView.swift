@@ -11,10 +11,11 @@ struct SearchView: View {
                 // 검색 바
                 HStack {
                     Image(systemName: "magnifyingglass")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                     
                     TextField("검색어를 입력하세요", text: $searchText)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .foregroundColor(.black)
                         .onChange(of: searchText) { newValue in
                             viewModel.searchProducts(query: newValue)
                         }

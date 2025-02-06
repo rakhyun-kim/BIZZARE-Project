@@ -13,7 +13,7 @@ struct ProductCard: View {
                 .aspectRatio(1, contentMode: .fit)
                 .overlay(
                     Text("Image")
-                        .foregroundColor(.gray)
+                        .foregroundColor(.black)
                 )
             
             // 상품 정보
@@ -22,6 +22,7 @@ struct ProductCard: View {
                     Text(product.name)
                         .font(.subheadline)
                         .lineLimit(2)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     

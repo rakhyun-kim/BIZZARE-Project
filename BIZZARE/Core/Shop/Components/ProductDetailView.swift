@@ -93,17 +93,3 @@ struct ProductDetailView: View {
         showingAddToCartAlert = true
     }
 }
-
-#Preview {
-    NavigationView {
-        ProductDetailView(product: Product(
-            name: "Sample Product",
-            price: 99.99,
-            description: "This is a sample product description that explains the features and benefits of the product.",
-            quantity: 10,
-            imageURL: "sample_image",
-            category: "ALL"
-        ))
-        .environmentObject(ShopViewModel())
-    }
-} 

@@ -68,17 +68,3 @@ struct ProductCard: View {
         }
     }
 }
-
-#Preview {
-    ProductCard(product: Product(
-        name: "Sample Product",
-        price: 99.99,
-        description: "샘플 상품입니다",
-        quantity: 5,
-        imageURL: "sample_image",
-        category: "ALL"
-    ))
-    .environmentObject(ShopViewModel())
-    .frame(width: 200)
-    .padding()
-} 

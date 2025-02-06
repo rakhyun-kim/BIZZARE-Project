@@ -39,8 +39,10 @@ struct CartView: View {
                                 VStack(alignment: .leading) {
                                     Text(item.name)
                                         .font(.headline)
+                                        .foregroundColor(.black)
                                     Text("₩\(Int(item.price))")
                                         .font(.subheadline)
+                                        .foregroundColor(.black)
                                 }
                                 
                                 Spacer()

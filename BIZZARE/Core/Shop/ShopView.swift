@@ -38,12 +38,14 @@ struct ShopView: View {
                             NavigationLink(destination: ProductDetailView(product: product)) {
                                 ProductCard(product: product)
                             }
+                            .buttonStyle(PlainButtonStyle())
                         }
                     }
                     .padding()
                 }
             }
             .navigationTitle("SHOP")
+            .foregroundColor(.black)
             .navigationBarItems(trailing: HStack {
                 Button(action: { showingSearch.toggle() }) {
                     Image(systemName: "magnifyingglass")
